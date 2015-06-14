@@ -64,12 +64,12 @@ Some examples of using the Complex.js library.
 
 ### Example
 
-  	divComplex("4+3i", "3+4i");                // From expressions * Output: {r: 0.96, i: -0.28, eq: "0.96-0.28i"}
-  	divComplex({r: 4, i:3}, {r: 3, i:4});      // From objects * Output: {r: 0.96, i: -0.28, eq: "0.96-0.28i"}
-  	divComplex({eq: "4+3i"}, {eq: "3+4i"});    // From objects * Output: {r: 0.96, i: -0.28, eq: "0.96-0.28i"}
-    divComplex("3i", "4i");                    // From complex numbers * Output: {r: 0.75, i: 0, eq: "0.75+0i"}
-    divComplex(3, "4i");                       // From complex numbers * Output: {r: 0, i: -0.75, eq: "0-0.75i"}
-    divComplex(3, 4);                          // From numbers * Output: {r: 0.75, i: 0, eq: "0.75+0i"}
+  	divComplex("4+3i", "3+4i");                     // From expressions * Output: {r: 0.96, i: -0.28, eq: "0.96-0.28i"}
+  	divComplex({r: 4, i:3}, {r: 3, i:4});           // From objects * Output: {r: 0.96, i: -0.28, eq: "0.96-0.28i"}
+  	divComplex({eq: "4+3i"}, {eq: "3+4i"});         // From objects * Output: {r: 0.96, i: -0.28, eq: "0.96-0.28i"}
+    divComplex("3i", "4i");                         // From complex numbers * Output: {r: 0.75, i: 0, eq: "0.75+0i"}
+    divComplex(3, "4i");                            // From complex numbers * Output: {r: 0, i: -0.75, eq: "0-0.75i"}
+    divComplex(3, 4);                               // From numbers * Output: {r: 0.75, i: 0, eq: "0.75+0i"}
 
 ## 
 
