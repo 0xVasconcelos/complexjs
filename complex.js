@@ -48,14 +48,12 @@ function getComplex(cNumber) {
 			};
 		return obj;
 	}
-	else if (typeof cNumber == "object" && cNumber.r || cNumber.i || cNumber.eq) {
+	else if (typeof cNumber == "object" && (cNumber.r || cNumber.i || cNumber.eq)) {
 		if (cNumber.eq) {
 			return getComplex(cNumber.eq);
 		}
 		else {
-			cNumber.r = (cNumber.r ? cNumber.r : "0");
-			cNumber.i = (cNumber.i ? cNumber.i : "0");
-			return getComplex(eqComplex(cNumber.r, cNumber.i));
+			return getComplex(eqComplex(cNumber.r||"0", cNumber.i||"0"));
 		}
 	}
 }
