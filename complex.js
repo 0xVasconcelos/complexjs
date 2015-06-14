@@ -3,7 +3,6 @@ Complex.js - Complex numbers library for JavaScript
 @author Lucas Vasconcelos <lucaslg26@yahoo.com.br>; André Blanco <andrezinho.blanco@gmail.com>
 @license http://www.apache.org/licenses/LICENSE-2.0
 */
-
 /**
  * Return real, imaginary parts and the algebric expression from expressions, objects and numbers.
  * @author Lucas Vasconcelos <lucaslg26@yahoo.com.br> and André Blanco <andrezinho.blanco@gmail.com>
@@ -13,8 +12,8 @@ Complex.js - Complex numbers library for JavaScript
  */
 function getComplex(cNumber) {
 	var complexArray = /([-+]?\d+\.?\d*|[-+]?\d*\.?\d+)\s*([-+])?\s*([-+]?\d+\.?\d*|[-+]?\d*\.?\d+)i/.exec(cNumber),
-		complexNumber = /(^[-+]?\d+\.?\d*|^[-+]?\d*\.?\d+$)i/.exec(cNumber),
-		complexAlt = /([-+]?\d+\.?\d*|[-+]?\d*\.?\d+)\s*([-+])?\s*i/.exec(cNumber);
+	    complexNumber = /(^[-+]?\d+\.?\d*|^[-+]?\d*\.?\d+$)i/.exec(cNumber),
+	    complexAlt = /([-+]?\d+\.?\d*|[-+]?\d*\.?\d+)\s*([-+])?\s*i/.exec(cNumber);
 	if (typeof cNumber == "number") {
 		var obj = {
 			r: cNumber,
