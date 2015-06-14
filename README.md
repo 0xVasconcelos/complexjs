@@ -15,7 +15,7 @@ Some examples of using the Complex.js library.
     getComplex("3i"); // From complex numbers
     getComplex(5); //From numbers 
 
-## logger.rb
+## 
 
 ## Contributors
 
