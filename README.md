@@ -42,7 +42,7 @@ Some examples of using the Complex.js library.
   	subtraComplex({eq: "4+3i"}, {eq: "3+4i"});    // From objects * Output: {r: 1, i: -1, eq: "1-1i"}
     subtraComplex("3i", "4i");                    // From complex numbers * Output: {r: 0, i: -1, eq: "0-1i"}
     subtraComplex(3, "4i");                       // From complex numbers * Output: {r: 3, i: -4, eq: "3-4i"}
-    sumComplex(4, 3);                             // From numbers * Output: {r: 1, i: 0, eq: "1+0i"}
+    subtraComplex(4, 3);                          // From numbers * Output: {r: 1, i: 0, eq: "1+0i"}
 
 ## 
 ## Get multiplication of two complex expressions and numbers
