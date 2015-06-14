@@ -75,7 +75,7 @@ Some examples of using the Complex.js library.
 
 ### Contributors
 
-  	André Blanco
+  	André Blanco - https://github.com/AndreBlanco
   	Hiago Prata - https://github.com/hcPUNCH
   	Luiz Eduardo - https://github.com/LuizEdP
 
