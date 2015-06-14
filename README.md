@@ -5,9 +5,17 @@ JavaScript complex numbers library
 
 Some examples of using the Complex.js library.
 
-## Get Real and Iamginray parts from expressions, numbers and objects.
+## Get real, imaginary parts and the algebric expression from expressions, numbers and objects.
 
 
+### Example
+
+  	getComplex("4+3i"); // From expressions
+  	getComplex({r: 4, i:3}); // From objects
+    getComplex("3i"); // From complex numbers
+    getComplex(5); //From numbers 
+
+## logger.rb
 
 ## Contributors
 
