@@ -18,7 +18,7 @@ Some examples of using the Complex.js library.
 
 ## 
 
-## Get sum of two complex numbers
+## Get sum of two complex expressions and numbers
 
 
 ### Example
@@ -27,6 +27,7 @@ Some examples of using the Complex.js library.
   	sumComplex({r: 4, i:3}, {r: 3, i:4});         // From objects * Output: {r: 7, i: 7, eq: "7+7i"}
   	sumComplex({eq: "4+3i"}, {eq: "3+4i"});       // From objects * Output: {r: 7, i: 7, eq: "7+7i"}
     sumComplex("3i", "4i");                       // From complex numbers * Output: {r: 0, i: 7, eq: "0+7i"}
+    sumComplex(3, "4i");                          // From complex numbers * Output: {r: 3, i: 4, eq: "3+4i"}
     sumComplex(3, 4);                             // From numbers * Output: {r: 7, i: 0, eq: "7+0i"}
 
 ## 
