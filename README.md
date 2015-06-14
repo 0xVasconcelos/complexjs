@@ -76,7 +76,9 @@ Some examples of using the Complex.js library.
 
 ## Contributors
 
-André Blanco <dsddd>
+André Blanco (andrezinho.blanco@gmail.com)
+Hiago Prata <>
+Luiz Eduardo - https://github.com/LuizEdP
 
 ## License
 Licensed under the Apache License, Version 2.0 (the "License");
