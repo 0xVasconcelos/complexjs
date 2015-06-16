@@ -56,6 +56,9 @@ function getComplex(cNumber) {
 			return getComplex(eqComplex(cNumber.r||"0", cNumber.i||"0"));
 		}
 	}
+	else{
+		return "Houston, we have a problem. Where's the complex?"
+	}
 }
 /**
  * Return the algebric expression from real and imaginary parts.
