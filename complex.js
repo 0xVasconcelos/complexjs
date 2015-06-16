@@ -207,7 +207,7 @@ function trigonoFormComplex(a) {
  */
 function logComplex(a) {
 	var a = getComplex(a),
-		logR = Math.log(a.r),
+		logR = Math.log(modComplex(a)),
 		argZ = Math.atan(sinComplex(a) / cosComplex(a));
 	return complexObj(logR, argZ);
 }
