@@ -265,3 +265,10 @@ function tanhComplex(a){
       tanhComplexI = divComplex(sinhComplex(a), coshComplex(a)).i;
   return complexObj(tanhComplexR, tanhComplexI);
 }
+function expComplex(a, c){
+	var a = getComplex(a),
+      c = getComplex(c),
+      expR = Math.pow(Math.E, (c.r * logComplex(a).r - c.i * logComplex(a).i)) * Math.cos(c.r * logComplex(a).i + c.i * logComplex(a).r),
+      expI = Math.pow(Math.E, (c.r * logComplex(a).r - c.i * logComplex(a).i)) * Math.sin(c.r * logComplex(a).i + c.i * logComplex(a).r);
+  return complexObj(expR, expI);
+}
