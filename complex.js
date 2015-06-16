@@ -259,7 +259,7 @@ function coshComplex(a) {
  * @param a-> string(literal expression, complex number), numbers(real part) and object(r, i, eq)
  * @returns Object(r, i, eq)
  */
-function tghComplex(a){
+function tanhComplex(a){
 	var a = getComplex(a),
       tanhComplexR = divComplex(sinhComplex(a), coshComplex(a)).r,
       tanhComplexI = divComplex(sinhComplex(a), coshComplex(a)).i;
