@@ -172,8 +172,9 @@ function modComplex(a) {
  */
 function cosComplex(a) {
 	var a = getComplex(a),
-		cosZ = a.r / modComplex(a);
-	return cosZ;
+	cosComplexR = Math.cos(a.r)*Math.cosh(a.i),
+	cosComplexI = -(Math.sin(a.r)*Math.sinh(a.i));
+	return complexObj(cosComplexR, cosComplexI);
 }
 /**
  * Return sin of the complex number
@@ -184,8 +185,15 @@ function cosComplex(a) {
  */
 function sinComplex(a) {
 	var a = getComplex(a),
-		sinZ = a.i / modComplex(a);
-	return sinZ;
+	sinComplexR = Math.sin(a.r) * Math.cosh(a.i),
+	sinComplexI = Math.cos(a.r) * Math.sinh(a.i);
+	return complexObj(sinComplexR, sinComplexI);
+}
+function tanComplex(a){
+	var a = getComplex(a),
+	tanComplexR = divComplex(sinComplex(a), cosComplex(a)).r,
+	tanComplexI = divComplex(sinComplex(a), cosComplex(a)).i;
+	return complexObj(tanComplexR, tanComplexI);
 }
 /**
  * Return trigonometric form of the complex number
@@ -195,12 +203,12 @@ function sinComplex(a) {
  * @returns Object(r, i, eq)
  */
 function trigonoFormComplex(a) {
-	var b = sinComplex(a),
-		plus = (b >= 0 ? "+" : ""),
+	var a = getComplex(a),
+		plus = ((a.i/modComplex(a)) >= 0 ? "+" : ""),
 		obj = {
-			r: modComplex(a) * cosComplex(a),
-			i: modComplex(a) * sinComplex(a),
-			eq: String(modComplex(a)) + "(" + cosComplex(a) + plus + b + "i" + ")"
+			r: modComplex(a) * (a.r/modComplex(a)),
+			i: modComplex(a) * (a.i/modComplex(a)),
+			eq: String(modComplex(a)) + "(" + (a.r/modComplex(a)) + plus + (a.i/modComplex(a)) + "i" + ")"
 		};
 	return obj;
 }
@@ -284,4 +292,12 @@ function expComplex(a, c){
       expR = Math.pow(Math.E, (c.r * logComplex(a).r - c.i * logComplex(a).i)) * Math.cos(c.r * logComplex(a).i + c.i * logComplex(a).r),
       expI = Math.pow(Math.E, (c.r * logComplex(a).r - c.i * logComplex(a).i)) * Math.sin(c.r * logComplex(a).i + c.i * logComplex(a).r);
   return complexObj(expR, expI);
+}
+function rtComplex(a, n){
+	var a = getComplex(a);
+	for (var i=0; i<n; i++){
+		var rtComplexR = Math.pow(modComplex(a), n) * Math.cos(Math.asin(a.i/modComplex(a)) + (2 * n * Math.PI)),
+		rtComplexI = Math.pow(modComplex(a), n) * Math.sin(Math.asin(a.i/modComplex(a)) + (2 * n * Math.PI));
+		return complexObj(rtComplex, rtComplexI);
+	} 
 }
