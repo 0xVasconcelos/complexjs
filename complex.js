@@ -253,7 +253,7 @@ function coshComplex(a) {
 	return complexObj(coshComplexR, coshComplexI);
 }
 /**
- * Return tgh of the complex number
+ * Return tanh of the complex number
  * @author Lucas Vasconcelos <lucaslg26@yahoo.com.br> and André Blanco <andrezinho.blanco@gmail.com>
  * @license http://www.apache.org/licenses/LICENSE-2.0
  * @param a-> string(literal expression, complex number), numbers(real part) and object(r, i, eq)
@@ -265,6 +265,13 @@ function tanhComplex(a){
       tanhComplexI = divComplex(sinhComplex(a), coshComplex(a)).i;
   return complexObj(tanhComplexR, tanhComplexI);
 }
+/**
+ * Return *
+ * @author Lucas Vasconcelos <lucaslg26@yahoo.com.br> and André Blanco <andrezinho.blanco@gmail.com>
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ * @param a-> string(literal expression, complex number), numbers(real part) and object(r, i, eq)
+ * @returns Object(r, i, eq)
+ */
 function expComplex(a, c){
 	var a = getComplex(a),
       c = getComplex(c),
