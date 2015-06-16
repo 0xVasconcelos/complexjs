@@ -57,7 +57,7 @@ function getComplex(cNumber) {
 		}
 	}	
 	else if (typeof cNumber == "string" && cNumber == "i"){
-		return getComplex({r: 0, i:1});
+		return getComplex("1i");
 	}
 	else{
 		return "Houston, we have a problem. Where's the complex?"
