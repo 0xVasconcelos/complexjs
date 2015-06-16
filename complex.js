@@ -55,6 +55,9 @@ function getComplex(cNumber) {
 		else {
 			return getComplex(eqComplex(cNumber.r||"0", cNumber.i||"0"));
 		}
+	}	
+	else if (typeof cNumber == "string" && cNumber == "i"){
+		return getComplex({r: 0, i:1});
 	}
 	else{
 		return "Houston, we have a problem. Where's the complex?"
