@@ -313,13 +313,22 @@ function asinComplex(a){
 	return complexObj(asinComplexR, asinComplexI);
 }
 function acosComplex(a){
-		var a = getComplex(a),
-		b = multipliComplex(a,a).eq,
-		c = subtraComplex('1+0i', b).eq,
-		d = rtComplex(c, 2).eq,
-		e = multipliComplex('0+1i',d).eq,
-		f = sumComplex(a,e).eq,
-		acosComplexR = logComplex(f).i,
-		acosComplexI = -1 * logComplex(f).r;
-		return complexObj(acosComplexR, acosComplexI);
+	var a = getComplex(a),
+	b = multipliComplex(a,a).eq,
+	c = subtraComplex('1+0i', b).eq,
+	d = rtComplex(c, 2).eq,
+	e = multipliComplex('0+1i',d).eq,
+	f = sumComplex(a,e).eq,
+	acosComplexR = logComplex(f).i,
+	acosComplexI = -1 * logComplex(f).r;
+	return complexObj(acosComplexR, acosComplexI);
+}
+function atanComplex(a){
+	var a = getComplex(a),
+	b = multipliComplex('0+1i', a).eq,
+	c = subtraComplex('1+0i', b).eq,
+	d = sumComplex('1+0i', b).eq,
+	atanComplexR = (logComplex(c).i - logComplex(d).i)/2, 
+	atanComplexI = (logComplex(c).r - logComplex(d).r)/2;
+	return complexObj(atanComplexR, atanComplexI);
 }
