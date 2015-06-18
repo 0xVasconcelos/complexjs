@@ -222,7 +222,7 @@ function trigonoFormComplex(a) {
 function logComplex(a) {
 	var a = getComplex(a),
 		logR = Math.log(modComplex(a)),
-		argZ = Math.atan((a.i/modComplex(a)) / (a.r/modComplex(a)));
+		argZ = Math.atan(a.i/a.r);
 	return complexObj(logR, argZ);
 }
 /**
@@ -306,7 +306,7 @@ function asinComplex(a){
 	b = multipliComplex(a,'1i').eq,
 	c = multipliComplex(a,a).eq,
 	d = subtraComplex('1+0i',c).eq,
-	e = rtComplex(d,2).eq,
+	e = expComplex(d, 0.5).eq,
 	f = sumComplex(b,e).eq,
 	asinComplexR = logComplex(f).i,
 	asinComplexI = -1 * logComplex(f).r;
@@ -315,20 +315,27 @@ function asinComplex(a){
 function acosComplex(a){
 	var a = getComplex(a),
 	b = multipliComplex(a,a).eq,
-	c = subtraComplex('1+0i', b).eq,
+	c = subtraComplex(b, '1+0i').eq,
 	d = rtComplex(c, 2).eq,
-	e = multipliComplex('0+1i',d).eq,
-	f = sumComplex(a,e).eq,
-	acosComplexR = logComplex(f).i,
-	acosComplexI = -1 * logComplex(f).r;
+	e = sumComplex(a,d).eq,
+	acosComplexR = logComplex(e).i,
+	acosComplexI = -1 * logComplex(e).r;
 	return complexObj(acosComplexR, acosComplexI);
 }
 function atanComplex(a){
 	var a = getComplex(a),
-	b = multipliComplex('0+1i', a).eq,
-	c = subtraComplex('1+0i', b).eq,
-	d = sumComplex('1+0i', b).eq,
-	atanComplexR = (logComplex(c).i - logComplex(d).i)/2, 
-	atanComplexI = (logComplex(c).r - logComplex(d).r)/2;
+	b =  subtraComplex(logComplex(sumComplex('0+1i', a)), logComplex(subtraComplex('0+1i', a))),
+	atanComplexR = b.i/2
+	atanComplexI = b.r/2
 	return complexObj(atanComplexR, atanComplexI);
+}
+function asinhComplex(a){
+	var a = getComplex(a),
+	b = expComplex(a,2).eq,
+	c = sumComplex(b, '1+0i').eq,
+	d = rtComplex(c, 2),
+	e = sumComplex(a, d).eq,
+	asinhComplexR = logComplex(e).r,
+	asinhComplexI = logComplex(e).i;
+	return complexObj(asinhComplexR, asinhComplexI);
 }
