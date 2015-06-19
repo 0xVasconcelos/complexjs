@@ -221,8 +221,8 @@ function trigonoFormComplex(a) {
  */
 function logComplex(a) {
 	var a = getComplex(a),
-		logR = Math.log(modComplex(a)),
-		argZ = Math.atan2(a.i, a.r);
+	logR = Math.log(modComplex(a)),
+	argZ = Math.atan2(a.i, a.r);
 	return complexObj(logR, argZ);
 }
 /**
@@ -235,9 +235,9 @@ function logComplex(a) {
  */
 function logBaseComplex(a, b) {
 	var a = logComplex(a),
-		b = Math.log(b),
-		logBaseComplexR = a.r / b,
-		logBaseComplexI = a.i / b;
+	b = Math.log(b),
+	logBaseComplexR = a.r / b,
+	logBaseComplexI = a.i / b;
 	return complexObj(logBaseComplexR, logBaseComplexI);
 }
 /**
@@ -299,7 +299,7 @@ function rtComplex(a, n){
 	for (var z=0; z<n; z++){
 		var rtComplexI = Math.pow(modComplex(a), 1/n) * Math.cos(Math.atan(a.i/a.r)/n + (2 * z * Math.PI)/n),
 		rtComplexR = Math.pow(modComplex(a), 1/n) * Math.sin(Math.atan(a.i/a.r)/n + (2 * z * Math.PI)/n);
-		roots.push(complexObj(rtComplexR, rtComplexI));
+		roots.push(complexObj(rtComplexI, rtComplexR));
 	}
 	return roots;
 }
@@ -316,10 +316,10 @@ function asinComplex(a){
 }
 function acosComplex(a){
 	var a = getComplex(a),
-	b = multipliComplex(a,a).eq,
-	c = subtraComplex(b, '1+0i').eq,
-	d = rtComplex(c, 2).eq,
-	e = sumComplex(a,d).eq,
+	b = multipliComplex(a,a),
+	c = subtraComplex(b, 1),
+	d = expComplex(c, 0.5),
+	e = sumComplex(a, d),
 	acosComplexR = logComplex(e).i,
 	acosComplexI = -1 * logComplex(e).r;
 	return complexObj(acosComplexR, acosComplexI);
@@ -335,9 +335,26 @@ function asinhComplex(a){
 	var a = getComplex(a),
 	b = expComplex(a,2),
 	c = sumComplex(b, 1),
-	d = rtComplex(c, 2)[0],
+	d = expComplex(c, 0.5),
 	e = sumComplex(a, d),
 	asinhComplexR = logComplex(e).r,
 	asinhComplexI = logComplex(e).i;
 	return complexObj(asinhComplexR, asinhComplexI);
+}
+function acoshComplex(a){
+	var a = getComplex(a),
+	b = expComplex(a,2),
+	c = subtraComplex(b, 1),
+	d = expComplex(c, 0.5),
+	e = sumComplex(a, d),
+	acoshComplexR = logComplex(e).r,
+	acoshComplexI = logComplex(e).i;
+	return complexObj(acoshComplexR, acoshComplexI);
+}
+function atanhComplex(a){
+	var a = getComplex(a),
+	b =  multipliComplex(0.5, logComplex(divComplex(sumComplex(1, a), subtraComplex(1, a)))),
+	atanhComplexR = b.r,
+	atanhComplexI = b.i;
+	return complexObj(atanhComplexR, atanhComplexI);
 }
