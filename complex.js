@@ -54,7 +54,7 @@ Complex.get = function(cNumber) {
 			return Complex.get(cNumber.eq);
 		}
 		else {
-			return Complex.get(eqComplex(cNumber.r||"0", cNumber.i||"0"));
+			return Complex.get(Complex.eq(cNumber.r||"0", cNumber.i||"0"));
 		}
 	}	
 	else if (typeof cNumber == "string" && cNumber == "i"){
