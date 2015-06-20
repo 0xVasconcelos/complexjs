@@ -130,7 +130,7 @@ Complex.subtra = function(a, b) {
  * @param b-> string(literal expression, complex number), numbers(real part) and object(r, i, eq)
  * @returns Object(r, i, eq)
  */
-Complex.multipli = function(a, b) {
+Complex.multiply = function(a, b) {
 	var a = Complex.get(a),
 		b = Complex.get(b),
 		r = a.r * b.r - (a.i * b.i),
