@@ -328,8 +328,8 @@ Complex.root = function(a, n){
  */
 Complex.asin = function(a){
 	var a = Complex.get(a),
-		b = Complex.multipli(a,'1i'),
-		c = Complex.multipli(a,a),
+		b = Complex.multiply(a,'1i'),
+		c = Complex.multiply(a,a),
 		d = Complex.subtra('1+0i',c),
 		e = Complex.exp(d, 0.5),
 		f = Complex.sum(b,e),
@@ -347,7 +347,7 @@ Complex.asin = function(a){
 
 Complex.acos = function(a){
 	var a = Complex.get(a),
-		b = Complex.multipli(a,a),
+		b = Complex.multiply(a,a),
 		c = Complex.subtra(b, 1),
 		d = Complex.exp(c, 0.5),
 		e = Complex.sum(a, d),
@@ -364,7 +364,7 @@ Complex.acos = function(a){
  */
 Complex.atan = function(a){
 	var a = Complex.get(a),
-		b =  Complex.multipli('0.5i', Complex.log(Complex.div(Complex.sum('i', a), Complex.subtra('i', a)))),
+		b =  Complex.multiply('0.5i', Complex.log(Complex.div(Complex.sum('i', a), Complex.subtra('i', a)))),
 		atanComplexR = b.r,
 		atanComplexI = b.i;
 	return Complex.obj(atanComplexR, atanComplexI);
@@ -412,7 +412,7 @@ Complex.acosh = function(a){
  */
 Complex.atanh = function(a){
 	var a = Complex.get(a),
-		b =  Complex.multipli(0.5, Complex.log(Complex.div(Complex.sum(1, a), Complex.subtra(1, a)))),
+		b =  Complex.multiply(0.5, Complex.log(Complex.div(Complex.sum(1, a), Complex.subtra(1, a)))),
 		atanhComplexR = b.r,
 		atanhComplexI = b.i;
 	return Complex.obj(atanhComplexR, atanhComplexI);
