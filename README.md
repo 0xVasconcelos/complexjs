@@ -5,7 +5,7 @@ JavaScript complex numbers library
 
 Some examples of using the Complex.js library.
 
-## <------------- UPDATE PENDING ----------->
+## <------------- OUTDATED: UPDATE PENDING ----------->
 
 
 ## Get real, imaginary parts and the algebric expression from expressions, numbers and objects.
