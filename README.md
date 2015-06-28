@@ -80,7 +80,10 @@ Some examples of using the Complex.js library.
 
   	André Blanco - https://github.com/AndreBlanco
   	Hiago Prata - https://github.com/hcPUNCH
-  	Luiz Eduardo - https://github.com/LuizEdP
+  	Keizi Klisman
+  	Auziane Moraes
+  	Lucas Santos
+  	
 
 ## 
 ## License
