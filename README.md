@@ -78,11 +78,10 @@ Some examples of using the Complex.js library.
 
 ### Contributors
 
-  	André Blanco - https://github.com/AndreBlanco
-  	Hiago Prata - https://github.com/hcPUNCH
-  	Keizi Klisman
-  	Auziane Moraes
-  	Lucas Santos
+		 
+   	André Blanco - https://github.com/AndreBlanco		   	
+   	Hiago Prata - https://github.com/hcPUNCH		   	
+   	Luiz Eduardo - https://github.com/LuizEdP
   	
 
 ## 
